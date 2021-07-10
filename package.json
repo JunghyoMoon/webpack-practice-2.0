@@ -1,0 +1,9 @@
+{
+  "name": "webpack-practice",
+  "version": "1.0.0",
+  "description": "learn webpack, babel, eslint, prettier, etc..",
+  "main": "index.js",
+  "author": "junghyomoon",
+  "license": "MIT",
+  "private": false
+}
