@@ -1,17 +1,18 @@
 {
-  "name": "webpack-practice",
-  "version": "1.0.0",
-  "description": "learn webpack, babel, eslint, prettier, etc..",
-  "main": "index.js",
-  "author": "junghyomoon",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "react": "^17.0.2",
-    "webpack": "^5.44.0",
-    "webpack-cli": "^4.7.2"
-  }
+    "name": "webpack-practice",
+    "version": "1.0.0",
+    "description": "learn webpack, babel, eslint, prettier, etc..",
+    "main": "index.js",
+    "author": "junghyomoon",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
+    },
+    "dependencies": {
+        "react": "^17.0.2",
+        "webpack": "4",
+        "webpack-cli": "^4.7.2"
+    }
 }
