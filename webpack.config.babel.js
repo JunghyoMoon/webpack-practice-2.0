@@ -1,5 +1,6 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CleanWebpackPlugin from "clean-webpack-plugin";
 
 module.exports = {
     mode: "development",
@@ -8,7 +9,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: "[name].js",
+        filename: "[name].[ext]",
     },
     module: {
         rules: [
@@ -20,6 +21,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: "My React App",
             template: path.resolve(__dirname, "./src/index.html"),

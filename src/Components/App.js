@@ -1,5 +1,12 @@
 import React from "react";
+import { Router } from "react-router-dom";
+import GlobalStyles from "./GlobalStyles";
 
-const App = () => <div>Hello world!</div>;
+const App = () => (
+    <>
+        <GlobalStyles />
+        <Router />
+    </>
+);
 
 export default App;
