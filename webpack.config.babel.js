@@ -19,7 +19,12 @@ module.exports = {
             },
         ],
     },
-    plugins: [],
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "My React App",
+            template: path.resolve(__dirname, "./src/index.html"),
+        }),
+    ],
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
