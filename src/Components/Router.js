@@ -11,7 +11,7 @@ import Details from "../Routes/Details";
 
 const Router = () => (
     <HashRouter>
-        <>
+        <div>
             <Header />
             <Switch>
                 <Route path="/" exact component={Home} />
@@ -19,10 +19,10 @@ const Router = () => (
                 <Route path="/epic" component={Epic} />
                 <Route path="/humble" component={Humble} />
                 <Route path="/details" component={Details} />
-                <Redirect from="*" to="/" />
+                <Redirect to="/" />
             </Switch>
             <Footer />
-        </>
+        </div>
     </HashRouter>
 );
 
