@@ -3,7 +3,6 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
 module.exports = {
-    mode: "development",
     entry: {
         main: path.resolve(__dirname, "./src/index.js"),
     },
