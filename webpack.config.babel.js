@@ -1,6 +1,6 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import CleanWebpackPlugin from "clean-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
 module.exports = {
     mode: "development",
@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: "[name].[ext]",
+        filename: "[name].js",
     },
     module: {
         rules: [

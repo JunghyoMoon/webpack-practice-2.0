@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { withRouter } from "react-router-dom";
 
 const Container = styled.div``;
 
@@ -9,4 +10,4 @@ const Header = () => (
     </Container>
 );
 
-export default Header;
+export default withRouter(Header);

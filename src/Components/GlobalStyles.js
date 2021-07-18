@@ -1,6 +1,6 @@
 import React from "react";
 import reset from "styled-reset";
-import { createGlobalStyle } from "styled-component";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = () => createGlobalStyle`
     ${reset}
