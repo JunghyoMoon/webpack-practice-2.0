@@ -12,7 +12,6 @@ const Logo = styled.span``;
 
 const Navigation = styled.ul`
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
 `;
 
