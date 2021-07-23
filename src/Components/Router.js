@@ -16,8 +16,6 @@ const Router = () => (
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/steam" component={Steam} />
-                <Route path="/epic" component={Epic} />
-                <Route path="/humble" component={Humble} />
                 <Route path="/details" component={Details} />
                 <Redirect to="/" />
             </Switch>

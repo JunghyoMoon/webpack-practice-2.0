@@ -19,19 +19,13 @@ const Item = styled.li``;
 
 const Header = ({ location: { pathname } }) => (
     <Container>
-        <Logo>MSSI</Logo>
+        <Logo>SteamSaleInfo</Logo>
         <Navigation>
             <Item current={pathname === "/"}>
                 <Link to="/">Home</Link>
             </Item>
             <Item current={pathname === "/steam"}>
                 <Link to="/steam">Steam</Link>
-            </Item>
-            <Item current={pathname === "/epic"}>
-                <Link to="/epic">Epic</Link>
-            </Item>
-            <Item current={pathname === "/humble"}>
-                <Link to="/humble">Humble</Link>
             </Item>
         </Navigation>
     </Container>
