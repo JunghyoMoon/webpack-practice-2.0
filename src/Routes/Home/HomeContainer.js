@@ -9,13 +9,15 @@ class HomeContainer extends Component {
                 loading: true,
                 error: null,
                 deals: null,
+                top5: null,
             });
     }
 
     async componentDidMount() {
         try {
             const { data } = await getDeals(searchOptions.metaritic);
-            this.setState({ deals: data });
+            this.setState({ deals: data.slice(5), top5: data.slice(0, 5) });
+            console.log(data, data.slice(0, 5));
         } catch {
             this.setState({ error: "Failed to get sales info." });
         } finally {
@@ -24,8 +26,15 @@ class HomeContainer extends Component {
     }
 
     render() {
-        const { loading, error, deals } = this.state;
-        return <HomePresenter loading={loading} error={error} deals={deals} />;
+        const { loading, error, deals, top5 } = this.state;
+        return (
+            <HomePresenter
+                loading={loading}
+                error={error}
+                deals={deals}
+                top5={top5}
+            />
+        );
     }
 }
 
