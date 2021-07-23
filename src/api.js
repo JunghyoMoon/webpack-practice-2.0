@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const main = axios.create({
-    baseURL: "M",
+    baseURL: "https://www.cheapshark.com/api/1.0/",
 });
 
 const steam = axios.create({
@@ -21,7 +21,7 @@ export const getDeals = (option) =>
     main.get("deals", {
         params: {
             storeID: 1,
-            onSale: 0,
+            onSale: 1,
             sortBy: option,
         },
     });
