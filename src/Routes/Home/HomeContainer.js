@@ -17,7 +17,6 @@ class HomeContainer extends Component {
         try {
             const { data } = await getDeals(searchOptions.metaritic);
             this.setState({ deals: data.slice(5), top5: data.slice(0, 5) });
-            console.log(data, data.slice(0, 5));
         } catch {
             this.setState({ error: "Failed to get sales info." });
         } finally {

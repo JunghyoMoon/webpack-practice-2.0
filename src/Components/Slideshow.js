@@ -1,11 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div``;
+const Container = styled.div`
+    width: 70%;
+    overflow: hidden;
+`;
 
 const Slider = styled.div``;
 
-const Slide = styled.div``;
+const Slide = styled.div`
+    width: 1000px;
+    height: 100px;
+    display: inline-block;
+
+    img {
+        width: 30%;
+        height: 100%;
+    }
+
+    ul {
+        position: absolute;
+    }
+`;
 
 const Slidshow = ({ top5 }) => (
     <Container>
@@ -13,8 +29,10 @@ const Slidshow = ({ top5 }) => (
             {top5.map((deal, index) => (
                 <Slide>
                     <img src={deal.thumb} />
-                    <span>{deal.title}</span>
-                    <span>{deal.savings}</span>
+                    <ul>
+                        <li>{deal.title}</li>
+                        <li>{deal.savings}</li>
+                    </ul>
                 </Slide>
             ))}
         </Slider>

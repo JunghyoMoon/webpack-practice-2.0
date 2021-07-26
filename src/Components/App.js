@@ -1,10 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React, { Fragment } from "react";
+import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import Router from "./Router";
-import GlobalStyles from "./GlobalStyles";
 
-const Container = styled.div`
+const GlobalStyles = createGlobalStyle`
     ${reset}
     a {
         text-decoration: none;
@@ -12,6 +11,8 @@ const Container = styled.div`
     }
     * {
         box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
     }
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -21,9 +22,10 @@ const Container = styled.div`
 `;
 
 const App = () => (
-    <Container>
+    <Fragment>
+        <GlobalStyles />
         <Router />
-    </Container>
+    </Fragment>
 );
 
 export default App;
