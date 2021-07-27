@@ -4,13 +4,13 @@ import { getDeals, searchOptions } from "../../api";
 
 class HomeContainer extends Component {
     constructor(props) {
-        super(props),
-            (this.state = {
-                loading: true,
-                error: null,
-                deals: null,
-                top5: null,
-            });
+        super(props);
+        this.state = {
+            loading: true,
+            error: null,
+            deals: null,
+            top5: null,
+        };
     }
 
     async componentDidMount() {

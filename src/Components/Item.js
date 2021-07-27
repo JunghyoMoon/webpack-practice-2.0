@@ -16,8 +16,6 @@ const Img = styled.img`
     margin-bottom: 10px;
 `;
 
-const Savings = styled.span``;
-
 const Title = styled.span`
     width: 200px;
     text-align: center;

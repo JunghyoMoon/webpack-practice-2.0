@@ -5,8 +5,6 @@ import Header from "./Header";
 // page components
 import Home from "../Routes/Home";
 import Steam from "../Routes/Steam";
-import Epic from "../Routes/Epic";
-import Humble from "../Routes/Humble";
 import Details from "../Routes/Details";
 
 const Router = () => (
