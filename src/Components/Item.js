@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
-    width: 20%;
     padding: 20px 0px;
     display: flex;
     flex-direction: column;
@@ -13,13 +12,14 @@ const Container = styled.div`
 
 const Img = styled.img`
     width: 185px;
+    border-radius: 3px;
     margin-bottom: 10px;
 `;
 
 const Savings = styled.span``;
 
 const Title = styled.span`
-    width: 60%;
+    width: 200px;
     text-align: center;
     font-size: 20px;
     font-weight: 500;
@@ -44,17 +44,27 @@ const Info = styled.li`
     }
 `;
 
-const Item = ({ deal }) => (
-    <Container>
-        <Img src={deal.thumb} />
-        <Title>{deal.title}</Title>
-        <InfoList>
-            <Info>{`${deal.normalPrice}$`}</Info>
-            <Info>→</Info>
-            <Info>{`${deal.salePrice}$`}</Info>
-            <Info>{`${parseInt(deal.savings)}%`}</Info>
-        </InfoList>
-    </Container>
+const Item = ({
+    thumb,
+    title,
+    normalPrice,
+    salePrice,
+    savings,
+    dealID,
+    steamAppID,
+}) => (
+    <Link to={`/details/${dealID}|${steamAppID}`}>
+        <Container>
+            <Img src={thumb} />
+            <Title>{title}</Title>
+            <InfoList>
+                <Info>{`${normalPrice}$`}</Info>
+                <Info>→</Info>
+                <Info>{`${salePrice}$`}</Info>
+                <Info>{`${parseInt(savings)}%`}</Info>
+            </InfoList>
+        </Container>
+    </Link>
 );
 
 export default Item;
