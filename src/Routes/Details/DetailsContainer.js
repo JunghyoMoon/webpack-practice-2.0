@@ -18,9 +18,8 @@ class DetailsContainer extends Component {
             location: { pathname },
         } = this.props;
         const [dealID, steamAppID] = pathname.split("/")[2].split("|");
-        console.log(dealID);
         try {
-            const price = await dealInfo(dealID);
+            const price = await dealInfo(decodeURIComponent(dealID));
             console.log(price);
         } catch {
             this.setState({ error: `Cannot get ${dealID}..` });

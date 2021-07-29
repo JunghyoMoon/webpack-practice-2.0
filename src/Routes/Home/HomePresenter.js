@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Loading from "../../Components/Loading";
 import Item from "../../Components/Item";
-import Slideshow from "../../Components/Slideshow";
+import Top5 from "../../Components/Top5";
 
 const Container = styled.div`
     width: 100%;
@@ -16,7 +16,7 @@ const HomePresenter = ({ loading, error, deals, top5 }) =>
         <Loading />
     ) : (
         <Container>
-            <Slideshow top5={top5} />
+            <Top5 top5={top5} />
             {deals.map((deal) => (
                 <Item
                     key={deal.dealID}
