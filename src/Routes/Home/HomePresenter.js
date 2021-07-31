@@ -11,12 +11,12 @@ const Container = styled.div`
     align-items: center;
 `;
 
-const HomePresenter = ({ loading, error, deals, top5 }) =>
+const HomePresenter = ({ loading, error, deals, top5, handleChange }) =>
     loading ? (
         <Loading />
     ) : (
         <Container>
-            <Top5 top5={top5} />
+            <Top5 top5={top5} handleChange={handleChange} />
             {deals.map((deal) => (
                 <Item
                     key={deal.dealID}
