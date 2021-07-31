@@ -11,7 +11,11 @@ const Container = styled.div`
     align-items: center;
 `;
 
-const ItemContainer = styled.div``;
+const ItemContainer = styled.div`
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+`;
 
 const Title = styled.div`
     display: flex;
@@ -50,18 +54,20 @@ const HomePresenter = ({
                 </SortBy>
             </Title>
             <Top5 top5={top5} handleChange={handleChange} />
-            {deals.map((deal) => (
-                <Item
-                    key={deal.dealID}
-                    thumb={deal.thumb}
-                    title={deal.title}
-                    normalPrice={deal.normalPrice}
-                    salePrice={deal.salePrice}
-                    savings={deal.savings}
-                    dealID={deal.dealID}
-                    steamAppID={deal.steamAppID}
-                />
-            ))}
+            <ItemContainer>
+                {deals.map((deal) => (
+                    <Item
+                        key={deal.dealID}
+                        thumb={deal.thumb}
+                        title={deal.title}
+                        normalPrice={deal.normalPrice}
+                        salePrice={deal.salePrice}
+                        savings={deal.savings}
+                        dealID={deal.dealID}
+                        steamAppID={deal.steamAppID}
+                    />
+                ))}
+            </ItemContainer>
         </Container>
     );
 

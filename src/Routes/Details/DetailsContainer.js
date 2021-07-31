@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DetailsPresenter from "./DetailsPresenter";
-import { dealInfo, gameInfo } from "../../api";
+import { dealInfo } from "../../api";
 
 class DetailsContainer extends Component {
     constructor(props) {
@@ -8,7 +8,7 @@ class DetailsContainer extends Component {
         this.state = {
             loading: true,
             error: null,
-            price: null,
+            info: null,
             game: null,
         };
     }
@@ -19,8 +19,10 @@ class DetailsContainer extends Component {
         } = this.props;
         const [dealID, steamAppID] = pathname.split("/")[2].split("|");
         try {
-            const price = await dealInfo(decodeURIComponent(dealID));
-            console.log(price);
+            const {
+                data: { gameInfo },
+            } = await dealInfo(decodeURIComponent(dealID));
+            this.setState({ info: gameInfo });
         } catch {
             this.setState({ error: `Cannot get ${dealID}..` });
         } finally {
@@ -29,7 +31,8 @@ class DetailsContainer extends Component {
     }
 
     render() {
-        return <DetailsPresenter />;
+        const { loading, error, info } = this.state;
+        return <DetailsPresenter loading={loading} error={error} info={info} />;
     }
 }
 
