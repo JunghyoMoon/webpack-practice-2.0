@@ -10,40 +10,14 @@ const Container = styled.div`
     justify-content: center;
 `;
 
-const Title = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
-const TitleText = styled.span``;
-
-const SortBy = styled.select`
-    background-color: black;
-    border: none;
-    color: white;
-`;
-
 const Games = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;
 
-const Top5 = ({ top5, handleChange }) => (
+const Top5 = ({ top5 }) => (
     <Container>
-        <Title>
-            <TitleText>Top5 deals: sorted by</TitleText>
-            <SortBy onChange={handleChange}>
-                <option value="recent">recent</option>
-                <option value="Reviews">reviews</option>
-                <option value="Release">release</option>
-                <option value="Savings">savings</option>
-                <option value="Price">price</option>
-                <option value="Metacritic" selected>
-                    metacritic
-                </option>
-            </SortBy>
-        </Title>
         <Games>
             {top5.map((game) => (
                 <Item

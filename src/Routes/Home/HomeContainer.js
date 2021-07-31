@@ -10,17 +10,22 @@ class HomeContainer extends Component {
             error: null,
             deals: null,
             top5: null,
+            currentCategory: null,
         };
     }
 
     handleChange = async (event) => {
         this.setState({ loading: true });
         const {
-            target: { value },
+            target: { value: keyword },
         } = event;
         try {
-            const { data } = await getDeals(value);
-            this.setState({ deals: data.slice(5), top5: data.slice(0, 5) });
+            const { data } = await getDeals(keyword);
+            this.setState({
+                deals: data.slice(5),
+                top5: data.slice(0, 5),
+                currentCategory: keyword,
+            });
         } catch {
             this.setState({ error: "Failed to get sales info." });
         } finally {
@@ -30,8 +35,13 @@ class HomeContainer extends Component {
 
     async componentDidMount() {
         try {
-            const { data } = await getDeals(searchOptions.metacritic);
-            this.setState({ deals: data.slice(5), top5: data.slice(0, 5) });
+            const defaultKeyword = searchOptions.metaritic;
+            const { data } = await getDeals(defaultKeyword);
+            this.setState({
+                deals: data.slice(5),
+                top5: data.slice(0, 5),
+                currentCategory: defaultKeyword,
+            });
         } catch {
             this.setState({ error: "Failed to get sales info." });
         } finally {
@@ -40,13 +50,14 @@ class HomeContainer extends Component {
     }
 
     render() {
-        const { loading, error, deals, top5 } = this.state;
+        const { loading, error, deals, top5, currentCategory } = this.state;
         return (
             <HomePresenter
                 loading={loading}
                 error={error}
                 deals={deals}
                 top5={top5}
+                currentCategory={currentCategory}
                 handleChange={this.handleChange}
             />
         );

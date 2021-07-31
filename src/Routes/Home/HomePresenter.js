@@ -11,11 +11,44 @@ const Container = styled.div`
     align-items: center;
 `;
 
-const HomePresenter = ({ loading, error, deals, top5, handleChange }) =>
+const ItemContainer = styled.div``;
+
+const Title = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+const TitleText = styled.span``;
+
+const SortBy = styled.select`
+    background-color: black;
+    border: none;
+    color: white;
+`;
+
+const HomePresenter = ({
+    loading,
+    error,
+    deals,
+    top5,
+    currentCategory,
+    handleChange,
+}) =>
     loading ? (
         <Loading />
     ) : (
         <Container>
+            <Title>
+                <TitleText>Top5 deals: sorted by</TitleText>
+                <SortBy onChange={handleChange} defaultValue={currentCategory}>
+                    <option value="recent">recent</option>
+                    <option value="Reviews">reviews</option>
+                    <option value="Release">release</option>
+                    <option value="Savings">savings</option>
+                    <option value="Price">price</option>
+                    <option value="Metacritic">metacritic</option>
+                </SortBy>
+            </Title>
             <Top5 top5={top5} handleChange={handleChange} />
             {deals.map((deal) => (
                 <Item
