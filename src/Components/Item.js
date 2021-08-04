@@ -59,7 +59,7 @@ const Item = ({
                 <Info>{`${normalPrice}$`}</Info>
                 <Info>→</Info>
                 <Info>{`${salePrice}$`}</Info>
-                <Info>{`${parseInt(savings)}%`}</Info>
+                <Info>{`-${parseInt(savings)}%`}</Info>
             </InfoList>
         </Container>
     </Link>

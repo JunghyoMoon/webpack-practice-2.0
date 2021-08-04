@@ -5,6 +5,7 @@ import Item from "../../Components/Item";
 import Top5 from "../../Components/Top5";
 
 const Container = styled.div`
+    padding-top: 70px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -20,14 +21,22 @@ const ItemContainer = styled.div`
 const Title = styled.div`
     display: flex;
     align-items: center;
+    margin-bottom: 15px;
 `;
 
-const TitleText = styled.span``;
+const TitleText = styled.span`
+    font-size: 30px;
+`;
 
 const SortBy = styled.select`
+    font-size: 30px;
     background-color: black;
     border: none;
     color: white;
+
+    option {
+        font-size: 15px;
+    }
 `;
 
 const HomePresenter = ({
@@ -43,7 +52,7 @@ const HomePresenter = ({
     ) : (
         <Container>
             <Title>
-                <TitleText>Top5 deals: sorted by</TitleText>
+                <TitleText>sorted by</TitleText>
                 <SortBy onChange={handleChange} defaultValue={currentCategory}>
                     <option value="recent">recent</option>
                     <option value="Reviews">reviews</option>
